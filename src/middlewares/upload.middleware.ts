@@ -38,7 +38,7 @@ function checkFileType(file: any, cb: any) {
   if (mimetype && extname) {
     return cb(null, true);
   } else {
-    cb('Error: Images Only!');
+    throw new Error('Only image uploads are allowed')
   }
 }
 
