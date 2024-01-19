@@ -11,7 +11,11 @@ if (process.env.NODE_ENV !== 'production')
 const dbConnection = mongoose.connect(`${AppConfig.db.url}`, {
   retryWrites: true,
   w: 'majority'
-}).then(() => console.log(`DATASOURCE:${mongoose.connection.host}\nPORT: ${mongoose.connection.port}\nDATABASE:${mongoose.connection.name}`))
+})
+.then(() => {
+  console.log(`DATASOURCE:${mongoose.connection.host}\nPORT: ${mongoose.connection.port}\nDATABASE:${mongoose.connection.name}`)
+})
   .catch(error => console.log(error));
+
 
 export default dbConnection;
