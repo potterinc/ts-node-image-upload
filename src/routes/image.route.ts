@@ -8,6 +8,7 @@ const imageUploadRouter: Router = express.Router();
 const image = new Images();
 
 // Application router
+imageUploadRouter.get('/', image.home)
 imageUploadRouter.get('/get_image', image.view);
 imageUploadRouter.post('/upload', upload, image.upload);
 
